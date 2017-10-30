@@ -1,0 +1,9 @@
+<h1>Please add a book!</h1>
+
+<%= simple_form_for @book do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back to Home', books_path %>

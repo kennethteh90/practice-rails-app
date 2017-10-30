@@ -1,0 +1,23 @@
+<h1>Welcome to the Reading List App</h1>
+
+<table>
+  <thead>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Completed?</th>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.author %></td>
+      <td><%= book.completed %></td>
+      <td><%= link_to 'Show Book', book_path(book) %></td>
+      <td><%= link_to 'Edit', edit_book_path(book) %></td>
+      <td><%= link_to 'Remove', book_path(book), method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add New Book', new_book_path %>
